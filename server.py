@@ -4,6 +4,7 @@ from pydantic import BaseModel
 import google.generativeai as genai
 from fastapi.middleware.cors import CORSMiddleware
 import json
+import os
 
 app = FastAPI()
 
@@ -41,4 +42,5 @@ def generate_reply(request: ChatRequest):
         return {"quick": "error", "lowball": "error", "polite": "check server console"}
 
 if __name__ == "__main__":
+
     uvicorn.run(app, host="127.0.0.1", port=8000)
